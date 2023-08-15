@@ -5,8 +5,6 @@ import { useNavigation } from "@react-navigation/native";
 import { styles } from "./MenuDetail.style";
 // Icons
 import { MaterialIcons } from "@expo/vector-icons";
-// Fonts
-import { Fonts } from "../../constants/Fonts";
 // Globals
 import { getMenuByDay } from "../../globals/handleMenus/getMenuByDay";
 // Components
