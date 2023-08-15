@@ -33,7 +33,9 @@ export const styles = StyleSheet.create({
     shadowColor: Colors.black,
   },
   mainTitle: {
+    height: 40,
     padding: 20,
+    paddingRight: 30,
     textShadowColor: Colors.black,
     textShadowOffset: { width: 2, height: 2 },
     textShadowRadius: 2,
