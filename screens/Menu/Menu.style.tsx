@@ -17,8 +17,9 @@ export const styles = StyleSheet.create({
     zIndex: 2,
   },
   mainHeaderContent: {
+    display: "flex",
+    justifyContent: "space-around",
     backgroundColor: Colors.backgroundDark,
-    padding: 10,
     borderRadius: 16,
     shadowColor: Colors.black,
     shadowOffset: {
@@ -30,6 +31,7 @@ export const styles = StyleSheet.create({
     elevation: 8,
   },
   mainTitle: {
+    marginTop: 10,
     textShadowColor: Colors.black,
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 4,
@@ -38,12 +40,16 @@ export const styles = StyleSheet.create({
     textAlign: "center",
   },
   mainSutitle: {
+    textAlignVertical: "center",
+    marginBottom: 10,
+    height: 40,
     textShadowColor: Colors.black,
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 4,
     ...Fonts.concertOneTitle,
     color: Colors.primary,
     textAlign: "center",
+    overflow: "visible",
   },
   carrouselContainer: {
     display: "flex",
