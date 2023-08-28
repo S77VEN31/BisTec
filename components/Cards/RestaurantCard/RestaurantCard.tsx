@@ -6,6 +6,7 @@ import {
   Pressable,
   ImageBackground,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 // Styles
 import { styles } from "./RestaurantCard.style";
 // Icons
@@ -19,6 +20,7 @@ type RestaurantData = {
   state: boolean;
   schedule: string;
   images: string[];
+  id: number;
 };
 
 const RestaurantCard: React.FC<RestaurantData> = ({
@@ -26,9 +28,20 @@ const RestaurantCard: React.FC<RestaurantData> = ({
   name,
   state,
   schedule,
+  id,
 }) => {
+  const navigation = useNavigation();
   const width = Dimensions.get("window").width;
   const height = Dimensions.get("window").height;
+  const goToMenu = () => {
+    (
+      navigation.navigate as (
+        screen: string,
+        params: { restaurantId: number }
+      ) => void
+    )("Menu", { restaurantId: id });
+  };
+
   return (
     <View style={styles.mainContainer}>
       <Carousel
@@ -56,7 +69,7 @@ const RestaurantCard: React.FC<RestaurantData> = ({
           <Pressable style={styles.button}>
             <Ionicons name="location-outline" style={styles.buttonText} />
           </Pressable>
-          <Pressable style={styles.button}>
+          <Pressable onPress={() => goToMenu()} style={styles.button}>
             <Entypo name="dots-three-vertical" style={styles.buttonText} />
           </Pressable>
         </View>

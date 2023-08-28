@@ -1,6 +1,6 @@
 // Tab Screens
-import Menu from "../screens/Menu/Menu";
 import About from "../screens/About/About";
+import Restaurants from "../screens/Restaurants/Restaurants";
 
 type TabScreenProps = {
   name: string;
@@ -10,8 +10,8 @@ type TabScreenProps = {
 export const TabNavigationConstants = {
   tabScreenProps: [
     {
-      name: "Menu",
-      component: Menu,
+      name: "Restaurants",
+      component: Restaurants,
     },
     {
       name: "About",
@@ -20,7 +20,7 @@ export const TabNavigationConstants = {
   ] as TabScreenProps[],
   tabMainNavBar: [
     {
-      name: "Menu",
+      name: "Restaurants",
       icon: "restaurant-menu",
     },
     {

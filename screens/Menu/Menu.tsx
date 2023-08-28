@@ -1,9 +1,13 @@
 // React
 import React, { useState, useEffect } from "react";
+import { useNavigation } from "@react-navigation/native";
+import { RouteProp } from "@react-navigation/native";
 // React Native
-import { Text, View, Dimensions } from "react-native";
+import { Text, View, Dimensions, Pressable } from "react-native";
 // Styles
 import { styles } from "./Menu.style";
+// Icons
+import { MaterialIcons } from "@expo/vector-icons";
 // Globals
 import { getMenuByDay } from "../../globals/handleMenus/getMenuByDay";
 import { getCurrentDay } from "../../globals/handleDays/getCurrentDay";
@@ -12,13 +16,24 @@ import Carousel from "react-native-reanimated-carousel";
 import DailyMenuCard from "../../components/Cards/DailyMenuCard/DailyMenuCard";
 import WeekNavBar from "../../components/NavBars/WeekNavBar/WeekNavBar";
 
-const Menu: React.FC = () => {
+type YourStackParamList = {
+  ScreenName: { restaurantId: number }; // Adjust the type accordingly
+};
+type MenuProps = {
+  route: RouteProp<YourStackParamList, "ScreenName">;
+};
+
+const Menu: React.FC<MenuProps> = ({ route }) => {
+  const { restaurantId } = route.params;
+  const navigation = useNavigation();
   const width = Dimensions.get("window").width;
   const height = Dimensions.get("window").height;
   const [day, setDay] = useState(getCurrentDay());
-  const [menuForGivenDay, setMenuForGivenDay] = useState(getMenuByDay(day));
+  const [menuForGivenDay, setMenuForGivenDay] = useState(
+    getMenuByDay(day, restaurantId)
+  );
   useEffect(() => {
-    const updatedMenu = getMenuByDay(day);
+    const updatedMenu = getMenuByDay(day, restaurantId);
     setMenuForGivenDay(updatedMenu);
   }, [day]);
 
@@ -26,6 +41,14 @@ const Menu: React.FC = () => {
     <View style={styles.mainContainer}>
       <View style={styles.mainHeader}>
         <View style={styles.mainTitleContent}>
+          <Pressable
+            style={styles.goBackButton}
+            onPress={() => {
+              navigation.goBack();
+            }}
+          >
+            <MaterialIcons name="arrow-back" style={styles.goBackIcon} />
+          </Pressable>
           <Text style={styles.mainTitle}>{day}</Text>
         </View>
         <WeekNavBar day={day} setDay={setDay} />

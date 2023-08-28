@@ -37,6 +37,7 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     zIndex: 2,
     flex: 0.8,
+    gap: 10,
   },
   mainTitle: {
     textTransform: "uppercase",
@@ -85,5 +86,26 @@ export const styles = StyleSheet.create({
     textShadowOffset: { width: 2, height: 2 },
     textShadowRadius: 2,
     marginBottom: 75,
+  },
+  goBackButton: {
+    shadowColor: Colors.black,
+    shadowOffset: {
+      width: 1,
+      height: 1,
+    },
+    shadowOpacity: 1,
+    shadowRadius: 2,
+    elevation: 16,
+    alignSelf: "center",
+    padding: 10,
+    borderRadius: 16,
+    backgroundColor: Colors.backgroundDark,
+  },
+  goBackIcon: {
+    fontSize: 30,
+    textShadowColor: Colors.black,
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+    color: Colors.primary,
   },
 });

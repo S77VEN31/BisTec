@@ -1,22 +1,11 @@
 // React
-import { View, ScrollView } from "react-native";
-// Styles
-import { styles } from "./About.style";
-// Enumerables
-import { AboutConstants } from "../../constants/screens/About/AboutConstants";
-// Components
-import RestaurantCard from "../../components/Cards/RestaurantCard/RestaurantCard";
+import { View, Text } from "react-native";
 
 const About: React.FC = () => {
-  const { restaurants } = AboutConstants;
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        {restaurants.map(({ ...props }, key) => {
-          return <RestaurantCard key={key} {...props} />;
-        })}
-      </View>
-    </ScrollView>
+    <View>
+      <Text>About</Text>
+    </View>
   );
 };
 export default About;

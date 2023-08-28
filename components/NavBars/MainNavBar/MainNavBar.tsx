@@ -12,7 +12,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 const MainNavBar: React.FC = () => {
   const navigation = useNavigation();
-  const [screen, setScreen] = useState("Menu");
+  const [screen, setScreen] = useState("Restaurants");
   const { tabMainNavBar } = TabNavigationConstants;
 
   return (
@@ -31,6 +31,7 @@ const MainNavBar: React.FC = () => {
             >
               <View>
                 <MaterialIcons
+                  // @ts-ignore
                   name={item.icon}
                   size={30}
                   style={

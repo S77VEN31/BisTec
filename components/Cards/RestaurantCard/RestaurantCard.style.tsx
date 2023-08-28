@@ -55,7 +55,6 @@ export const styles = StyleSheet.create({
   },
   buttonsContainer: {
     display: "flex",
-
     gap: 10,
   },
   button: {
