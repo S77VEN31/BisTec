@@ -62,6 +62,7 @@ const Menu: React.FC<MenuProps> = ({ route }) => {
       ) : (
         <View style={styles.carrouselContainer}>
           <Carousel
+            pagingEnabled={false}
             loop
             autoFillData={true}
             autoPlay={true}

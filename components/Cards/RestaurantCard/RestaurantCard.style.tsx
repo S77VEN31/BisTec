@@ -25,7 +25,16 @@ export const styles = StyleSheet.create({
     elevation: 8,
   },
   carousel: {
+    backgroundColor: Colors.white,
     borderRadius: 20,
+    shadowColor: Colors.black,
+    shadowOffset: {
+      width: 4,
+      height: 8,
+    },
+    shadowOpacity: 1,
+    shadowRadius: 8,
+    elevation: 8,
   },
   carouselImage: {
     alignSelf: "center",
@@ -52,6 +61,13 @@ export const styles = StyleSheet.create({
   restaurantName: {
     fontSize: 24,
     ...Fonts.concertOneTitle,
+    color: Colors.secondary,
+  },
+  open: {
+    color: Colors.success,
+  },
+  closed: {
+    color: Colors.error,
   },
   buttonsContainer: {
     display: "flex",

@@ -1,8 +1,8 @@
-export const AboutConstants = {
+export const RestaurantsConstants = {
     restaurants: [
         {
             id: 1,
-            name: 'Soda el lago',
+            name: 'Comedor institucional',
             state: true,
             schedule: "Lunes a Sábado de 8:15am a 7:30pm",
             images: [
@@ -13,7 +13,7 @@ export const AboutConstants = {
         },
         {
             id: 2,
-            name: 'Comedor institucional',
+            name: 'Soda el lago',
             state: true,
             schedule: "Lunes a Viernes de 7:00am a 5:00pm",
             images: [
@@ -34,6 +34,7 @@ export const AboutConstants = {
             ],
         },
         {
+            id: 4,
             name: 'Soda la Deportiva',
             state: false,
             schedule: "Lunes a Domingo de 7:00am a 5:00pm",

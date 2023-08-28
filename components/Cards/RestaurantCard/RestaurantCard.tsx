@@ -62,7 +62,9 @@ const RestaurantCard: React.FC<RestaurantData> = ({
       <View style={styles.restaurantData}>
         <View style={styles.restaurantInfo}>
           <Text style={styles.restaurantName}>{name}</Text>
-          <Text>{state ? "Abierto" : "Cerrado"}</Text>
+          <Text style={state ? styles.open : styles.closed}>
+            {state ? "Abierto" : "Cerrado"}
+          </Text>
           <Text>{schedule}</Text>
         </View>
         <View style={styles.buttonsContainer}>
