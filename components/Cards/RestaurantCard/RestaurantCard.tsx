@@ -13,6 +13,7 @@ import { styles } from "./RestaurantCard.style";
 // Icons
 import { Ionicons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 // Components
 import Carousel from "react-native-reanimated-carousel";
 import MapView, { Marker } from "react-native-maps";
@@ -22,6 +23,8 @@ type RestaurantData = {
   schedule: string;
   images: string[];
   id: number;
+  latitude: number;
+  longitude: number;
 };
 
 const RestaurantCard: React.FC<RestaurantData> = ({
@@ -107,7 +110,11 @@ const RestaurantCard: React.FC<RestaurantData> = ({
             }}
             style={styles.button}
           >
-            <Ionicons name="location-outline" style={styles.buttonText} />
+            {showMap ? (
+              <FontAwesome name="photo" style={styles.buttonText} />
+            ) : (
+              <Ionicons name="location-outline" style={styles.buttonText} />
+            )}
           </Pressable>
           <Pressable onPress={() => goToMenu()} style={styles.button}>
             <Entypo name="dots-three-vertical" style={styles.buttonText} />
