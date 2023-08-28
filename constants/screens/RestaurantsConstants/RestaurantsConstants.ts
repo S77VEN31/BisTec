@@ -5,6 +5,8 @@ export const RestaurantsConstants = {
             name: 'Comedor institucional',
             state: true,
             schedule: "Lunes a Sábado de 8:15am a 7:30pm",
+            latitude: 33.640411,
+            longitude: -84.419853,
             images: [
                 require('../../../assets/images/restaurants/restaurante-institucional/restaInstitucional1.png'),
                 require('../../../assets/images/restaurants/restaurante-institucional/restaInstitucional2.png'),
@@ -16,6 +18,8 @@ export const RestaurantsConstants = {
             name: 'Soda el lago',
             state: true,
             schedule: "Lunes a Viernes de 7:00am a 5:00pm",
+            latitude: 33.640411,
+            longitude: -84.419853,
             images: [
                 require('../../../assets/images/restaurants/soda-el-lago/sodaLago1.png'),
                 require('../../../assets/images/restaurants/soda-el-lago/sodaLago2.png'),
@@ -27,6 +31,8 @@ export const RestaurantsConstants = {
             name: 'Soda la Casita Forestal',
             state: false,
             schedule: "Lunes a Domingo de 7:30am a 4:00pm",
+            latitude: 33.640411,
+            longitude: -84.419853,
             images: [
                 require('../../../assets/images/restaurants/soda-la-casita-forestal/sodaForestal1.png'),
                 require('../../../assets/images/restaurants/soda-la-casita-forestal/sodaForestal2.png'),
@@ -38,6 +44,8 @@ export const RestaurantsConstants = {
             name: 'Soda la Deportiva',
             state: false,
             schedule: "Lunes a Domingo de 7:00am a 5:00pm",
+            latitude: 33.640411,
+            longitude: -84.419853,
             images: [
                 require('../../../assets/images/restaurants/soda-la-deportiva/sodaDeportiva1.png'),
                 require('../../../assets/images/restaurants/soda-la-deportiva/sodaDeportiva2.png'),

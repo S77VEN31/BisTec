@@ -36,6 +36,18 @@ export const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 8,
   },
+  map: {
+    backgroundColor: Colors.white,
+
+    shadowColor: Colors.black,
+    shadowOffset: {
+      width: 4,
+      height: 8,
+    },
+    shadowOpacity: 1,
+    shadowRadius: 8,
+    elevation: 8,
+  },
   carouselImage: {
     alignSelf: "center",
     justifyContent: "center",
