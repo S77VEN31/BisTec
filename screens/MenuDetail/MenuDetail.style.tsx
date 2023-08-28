@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
   mainContainer: {
     display: "flex",
     flex: 1,
-    backgroundColor: Colors.background,
+    backgroundColor: Colors.backgroundDark,
   },
   mainHeader: {
     display: "flex",
@@ -46,7 +46,7 @@ export const styles = StyleSheet.create({
     display: "flex",
     overflow: "hidden",
     alignItems: "center",
-    backgroundColor: Colors.background,
+    backgroundColor: Colors.backgroundDark,
     flex: 1,
   },
   carrousel: {

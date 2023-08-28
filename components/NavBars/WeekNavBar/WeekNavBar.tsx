@@ -1,19 +1,20 @@
 // React Native
 import { Text, View, Pressable } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 // Styles
 import { styles } from "./WeekNavBar.style";
+// Globals
+import { getCurrentDay } from "../../../globals/handleDays/getCurrentDay";
 // Constants
 import { General } from "../../../constants/General";
 
 type WeekNavBarProps = {
-  currentDay: string;
+  day: string;
+  setDay: (newDay: string) => void;
 };
 
-const WeekNavBar: React.FC<WeekNavBarProps> = ({ currentDay }) => {
-  const navigation = useNavigation();
+const WeekNavBar: React.FC<WeekNavBarProps> = ({ day, setDay }) => {
   const { daysOfWeek } = General;
-
+  const currentDay = getCurrentDay();
   return (
     <View style={styles.barContainer}>
       {daysOfWeek.map((item, key) => {
@@ -21,15 +22,16 @@ const WeekNavBar: React.FC<WeekNavBarProps> = ({ currentDay }) => {
           <Pressable
             style={styles.button}
             onPress={() => {
-              navigation.navigate("MenuDetail", { givenDay: item });
+              setDay(item);
             }}
             key={key}
           >
-            <Text
-              style={[styles.text, item === currentDay && styles.currentDay]}
-            >
+            <Text style={[styles.text, item === day && styles.currentDayText]}>
               {item[0]}
             </Text>
+            {item === currentDay && item !== day && (
+              <View style={styles.currentDayDot} />
+            )}
           </Pressable>
         );
       })}

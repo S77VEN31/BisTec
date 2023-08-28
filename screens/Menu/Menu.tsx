@@ -1,38 +1,35 @@
+// React
+import React, { useState, useEffect } from "react";
 // React Native
 import { Text, View, Dimensions } from "react-native";
 // Styles
 import { styles } from "./Menu.style";
-// Constants
-import { General } from "../../constants/General";
 // Globals
 import { getMenuByDay } from "../../globals/handleMenus/getMenuByDay";
+import { getCurrentDay } from "../../globals/handleDays/getCurrentDay";
 // Components
 import Carousel from "react-native-reanimated-carousel";
 import DailyMenuCard from "../../components/Cards/DailyMenuCard/DailyMenuCard";
 import WeekNavBar from "../../components/NavBars/WeekNavBar/WeekNavBar";
 
-function getEnglishDayOfWeek() {
-  const { daysOfWeek } = General;
-  const currentDate = new Date();
-  const dayIndex = currentDate.getDay();
-  return daysOfWeek[dayIndex];
-}
-
 const Menu: React.FC = () => {
   const width = Dimensions.get("window").width;
   const height = Dimensions.get("window").height;
-  const givenDay = getEnglishDayOfWeek();
-  const menuForGivenDay = getMenuByDay(givenDay);
+  const [day, setDay] = useState(getCurrentDay());
+  const [menuForGivenDay, setMenuForGivenDay] = useState(getMenuByDay(day));
+  useEffect(() => {
+    const updatedMenu = getMenuByDay(day);
+    setMenuForGivenDay(updatedMenu);
+  }, [day]);
 
   return (
     <View style={styles.mainContainer}>
       <View style={styles.mainHeader}>
-        <View style={styles.mainHeaderContent}>
-          <Text style={styles.mainTitle}>Bienvenido al MenuTec</Text>
-          <Text style={styles.mainSutitle}>Menu del {givenDay}</Text>
+        <View style={styles.mainTitleContent}>
+          <Text style={styles.mainTitle}>{day}</Text>
         </View>
+        <WeekNavBar day={day} setDay={setDay} />
       </View>
-      <WeekNavBar currentDay={givenDay} />
       {menuForGivenDay === null ? (
         <View style={styles.menuNull}>
           <Text style={styles.menuNullText}>

@@ -1,8 +1,8 @@
 export const Colors = {
-  primary: '#FF8000',
-  secondary: '#7b4300',
-  background: '#fff0b5',
-  backgroundDark: '#f9e080',
+  primary: '#06aed5',
+  secondary: '#480f9c',
+  background: '#7417ff',
+  backgroundDark: '#f1f3f0',
   backgroundLight: "rgba(217, 217, 217, 0.70)",
   black: '#000000',
   white: '#ffffff',
@@ -11,3 +11,4 @@ export const Colors = {
   success: '#4CD964',
   warning: '#FFCC00',
 };
+
