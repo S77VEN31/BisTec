@@ -17,6 +17,7 @@ import { FontAwesome } from "@expo/vector-icons";
 // Components
 import Carousel from "react-native-reanimated-carousel";
 import MapView, { Marker } from "react-native-maps";
+
 type RestaurantData = {
   name: string;
   state: boolean;
@@ -61,7 +62,7 @@ const RestaurantCard: React.FC<RestaurantData> = ({
             initialRegion={{
               latitude: origin.latitude,
               longitude: origin.longitude,
-              latitudeDelta: 0.09,
+              latitudeDelta: 0.0009,
               longitudeDelta: 0.04,
             }}
             showsUserLocation={true}
