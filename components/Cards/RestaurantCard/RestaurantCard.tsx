@@ -65,17 +65,17 @@ const RestaurantCard: React.FC<RestaurantData> = ({
               latitudeDelta: 0.0009,
               longitudeDelta: 0.04,
             }}
-            showsUserLocation={true}
+            //showsUserLocation={true}  //Test
             // followsUserLocation={true} // if the user is walking the map will move.
           >
             <Marker
-              draggable
+              //draggable   //Test
               coordinate={origin}
-              onDragEnd={(direction) =>
-                setOrigin(direction.nativeEvent.coordinate)
-              }
-              // title="My car" // when the user click shows a title
-              // description="This is my car" // when the user click shows a descripcion
+              // onDragEnd={(direction) =>    //Test
+              //   setOrigin(direction.nativeEvent.coordinate)    //Test
+              // }
+              // title="My car" // when the user click shows a title    //Test
+              // description="This is my car" // when the user click shows a descripcion   
             />
           </MapView>
         </View>
